@@ -1,34 +1,32 @@
-WITH UTI_Ranked AS (
+WITH UTI_Versions AS (
     SELECT 
         Deal,
         TransactionId,
         UTI,
-        ROW_NUMBER() OVER (PARTITION BY Deal, TransactionId ORDER BY UTI) AS rn
+        lasteconomoicModification,
+        ROW_NUMBER() OVER (PARTITION BY Deal, TransactionId ORDER BY lasteconomoicModification ASC) AS rn_min,
+        ROW_NUMBER() OVER (PARTITION BY Deal, TransactionId ORDER BY lasteconomoicModification DESC) AS rn_max,
+        COUNT(DISTINCT UTI) OVER (PARTITION BY Deal, TransactionId) AS uti_count
     FROM 
         DCSDB.TransactionTable_AUD
 )
 SELECT 
-    t1.Deal,
-    t1.TransactionId,
-    t1.UTI AS UTI1,
-    t2.UTI AS UTI2
+    min_uti.Deal,
+    min_uti.TransactionId,
+    min_uti.UTI AS UTI1,
+    max_uti.UTI AS UTI2,
+    max_uti.lasteconomoicModification
 FROM 
-    UTI_Ranked t1
+    UTI_Versions min_uti
 JOIN 
-    UTI_Ranked t2
+    UTI_Versions max_uti
 ON 
-    t1.Deal = t2.Deal
-    AND t1.TransactionId = t2.TransactionId
-    AND t1.rn = 1
-    AND t2.rn = 2
+    min_uti.Deal = max_uti.Deal
+    AND min_uti.TransactionId = max_uti.TransactionId
+    AND min_uti.rn_min = 1
+    AND max_uti.rn_max = 1
 WHERE 
-    EXISTS (
-        SELECT 1 
-        FROM UTI_Ranked t3 
-        WHERE t3.Deal = t1.Deal 
-          AND t3.TransactionId = t1.TransactionId 
-          AND t3.rn = 2
-    )
+    min_uti.uti_count > 1
 ORDER BY 
-    t1.Deal, 
-    t1.TransactionId;
+    min_uti.Deal, 
+    min_uti.TransactionId;
