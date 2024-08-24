@@ -1,3 +1,19 @@
+My system is about trade 
+
+I have an table with name : DCSDB.TransactionTable_Aud having rev column with incremental value with each version of new amendment of trade and primarily column or composite key for this table is (Deal+TransactionId)
+
+
+I also have another column UTI in audit table which is primary key for downstream but for my system primary key is (deal+transactionId)
+
+Through out trade life cycle  UTI once stamped for given composite key(deal+transactionid), it should not be updated but due to error in my code one (deal+transactionId ) have multiple UniqueInternalTradeId in audit table 
+
+
+here is another column last economic modification which tells when UTI was updated
+
+
+Can you please give query with all deals having multiple UniqueInternalTradeId with lastEconomicModification
+I want to know all composite key(deal+transactionId) having multiple uniqueInternalTradeId with all values
+
 
 SELECT 
     Deal,
@@ -46,3 +62,8 @@ ORDER BY
     a.Deal,
     a.TransactionId,
     a.lastEconomicModification;
+
+
+
+    a.Deal,
+    
