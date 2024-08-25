@@ -1,32 +1,3 @@
-WITH UTI_Versions AS (
-    SELECT 
-        Deal,
-        TransactionId,
-        UTI,
-        lasteconomoicModification,
-        ROW_NUMBER() OVER (PARTITION BY Deal, TransactionId ORDER BY lasteconomoicModification ASC) AS rn_min,
-        ROW_NUMBER() OVER (PARTITION BY Deal, TransactionId ORDER BY lasteconomoicModification DESC) AS rn_max,
-        COUNT(DISTINCT UTI) OVER (PARTITION BY Deal, TransactionId) AS uti_count
-    FROM 
-        DCSDB.TransactionTable_AUD
-)
-SELECT 
-    min_uti.Deal,
-    min_uti.TransactionId,
-    min_uti.UTI AS UTI1,
-    max_uti.UTI AS UTI2,
-    max_uti.lasteconomoicModification
-FROM 
-    UTI_Versions min_uti
-JOIN 
-    UTI_Versions max_uti
-ON 
-    min_uti.Deal = max_uti.Deal
-    AND min_uti.TransactionId = max_uti.TransactionId
-    AND min_uti.rn_min = 1
-    AND max_uti.rn_max = 1
-WHERE 
-    min_uti.uti_count > 1
-ORDER BY 
-    min_uti.Deal, 
-    min_uti.TransactionId;
+While I do not currently hold any certifications, I have extensive hands-on experience and a strong track record in [mention specific areas relevant to the job, e.g., software development, DevOps practices, microservices architecture, etc.]. I have always been committed to continuous learning and staying updated with industry best practices.
+
+I am open to pursuing relevant certifications that would further enhance my expertise and contribute to my role. My focus has always been on applying practical knowledge and skills to deliver high-quality outcomes, and I am confident that my experience aligns well with the requirements of this position
