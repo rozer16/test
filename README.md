@@ -1,16 +1,12 @@
-Application Design and Development:
-	•	Lead the end-to-end design and development of enterprise-level applications in the financial services domain, ensuring scalability, performance, and security.
-	•	Architect and develop microservices using Java frameworks like Spring and Hibernate to handle high-volume transaction processing for investment banking operations.
-	2.	Technical Leadership:
-	•	Mentor and guide a team of junior developers, performing code reviews and establishing best practices in coding, version control, and continuous integration.
-	•	Collaborate with cross-functional teams (DevOps, QA, and business analysts) to align technical solutions with business objectives.
-	3.	Performance Optimization:
-	•	Continuously optimize existing systems by enhancing performance, improving application responsiveness, and reducing latency, especially in high-frequency trading applications.
-	•	Implement effective caching strategies and optimize database queries to handle large data sets efficiently.
-	4.	Stakeholder Communication:
-	•	Act as a technical liaison between development teams and key stakeholders, including business heads and project managers, ensuring clarity in requirement gathering and project deliverables.
-	•	Participate in agile ceremonies, driving sprint planning, retrospectives, and project roadmaps to ensure timely delivery of projects.
-	5.	Risk and Compliance Management:
-	•	Ensure all applications adhere to internal security policies and comply with industry regulations, including data privacy, risk management, and secure coding practices.
-	6.	Innovation and Continuous Improvement:
-	•	Drive continuous improvement initiatives by researching and implementing new technologies and methodologies such as cloud adoption, automation, and artificial intelligence to streamline processes and increase operational efficiency.
+As a Java developer with over 11 years of experience, I’ve always sought opportunities to enhance my technical skills and strategic thinking. This program is a natural next step for me as it offers the chance to grow in key areas that I believe will have a transformative impact on both my career and my contributions to Citibank.
+
+	1.	Developing a Stronger Engineering Mindset:
+	•	I aim to cultivate a more holistic engineering mindset, which will allow me to think beyond immediate tasks and solutions. This will enable me to make more strategic architectural decisions that factor in scalability, performance, and long-term business goals, especially in the dynamic world of investment banking.
+	2.	Deepening Expertise in Emerging Solutions:
+	•	I am excited to gain deeper insights into areas like microservices, UX design, codification, and cloud strategy. Expanding my knowledge in these areas will allow me to design and implement more efficient, user-centric, and forward-thinking solutions that meet the evolving needs of the bank and its clients.
+	3.	Adopting New Ways of Working:
+	•	I hope to learn new skills and behaviors that will allow me to be a change agent in my team. Whether it’s fostering a DevOps culture, embracing automation, or supporting Agile principles, I want to be at the forefront of adopting and promoting these modern engineering practices within Citibank.
+	4.	Enhancing Collaborative Skills:
+	•	Collaboration is key to delivering great engineering solutions. Through this program, I hope to enhance my ability to work more effectively with cross-functional teams, ensuring that we not only build technically robust solutions but also align them with user and business needs.
+
+Ultimately, I want to leverage the knowledge and skills gained from this program to drive innovation, contribute to the bank’s strategic goals, and mentor others in adopting best engineering practices.
