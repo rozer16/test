@@ -1,12 +1,22 @@
-As a Java developer with over 11 years of experience, I’ve always sought opportunities to enhance my technical skills and strategic thinking. This program is a natural next step for me as it offers the chance to grow in key areas that I believe will have a transformative impact on both my career and my contributions to Citibank.
+1.	Bachelor’s Degree in Computer Science/Engineering
+	•	[Specify your degree and institution, e.g., “B.Tech in Computer Science from XYZ University”]
+	•	This foundation gave me a strong understanding of core programming principles, data structures, algorithms, and software engineering.
 
-	1.	Developing a Stronger Engineering Mindset:
-	•	I aim to cultivate a more holistic engineering mindset, which will allow me to think beyond immediate tasks and solutions. This will enable me to make more strategic architectural decisions that factor in scalability, performance, and long-term business goals, especially in the dynamic world of investment banking.
-	2.	Deepening Expertise in Emerging Solutions:
-	•	I am excited to gain deeper insights into areas like microservices, UX design, codification, and cloud strategy. Expanding my knowledge in these areas will allow me to design and implement more efficient, user-centric, and forward-thinking solutions that meet the evolving needs of the bank and its clients.
-	3.	Adopting New Ways of Working:
-	•	I hope to learn new skills and behaviors that will allow me to be a change agent in my team. Whether it’s fostering a DevOps culture, embracing automation, or supporting Agile principles, I want to be at the forefront of adopting and promoting these modern engineering practices within Citibank.
-	4.	Enhancing Collaborative Skills:
-	•	Collaboration is key to delivering great engineering solutions. Through this program, I hope to enhance my ability to work more effectively with cross-functional teams, ensuring that we not only build technically robust solutions but also align them with user and business needs.
-
-Ultimately, I want to leverage the knowledge and skills gained from this program to drive innovation, contribute to the bank’s strategic goals, and mentor others in adopting best engineering practices.
+3.	Key Technical Skills:
+	•	Java Development (Core & Enterprise):
+	•	Over 11 years of experience in Java, with deep expertise in frameworks such as Spring, Hibernate, and JPA for building robust enterprise applications.
+	•	Microservices Architecture:
+	•	Extensive experience in designing, building, and deploying microservices-based architectures for high-performance, scalable systems.
+	•	RESTful APIs & Web Services:
+	•	Proven ability to design and implement RESTful services and integrate third-party APIs, ensuring seamless communication between systems.
+	•	Database Management:
+	•	Expertise in relational databases (Oracle DB, SQL), query optimization, and managing large datasets, ensuring optimal performance in financial applications.
+	•	Cloud Technologies:
+	•	Practical knowledge of cloud platforms (AWS), including deploying Java applications on the cloud, optimizing for cost, scalability, and security.
+	•	DevOps & CI/CD:
+	•	Experience in using Jenkins, Docker, and Kubernetes for continuous integration and continuous deployment, enabling faster delivery of high-quality applications.
+4.	Professional Experience:
+	•	Java Developer at Citibank (11 years):
+	•	Designing and developing mission-critical applications for investment banking operations. Responsible for optimizing application performance, enhancing user experience, and ensuring system reliability and security.
+	•	Leadership and Mentorship:
+	•	Lead and mentored teams of developers, ensuring adherence to coding standards, performing code reviews, and fostering an environment of continuous learning and improvement.
