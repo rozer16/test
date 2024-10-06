@@ -1,6 +1,7 @@
 “While I do not hold any formal certifications, I bring extensive hands-on experience in software engineering and low latency trading systems. My expertise in this domain, combined with a strong understanding of industry best practices, has enabled me to deliver high-performance solutions in real-world environments.”
 
-
+ would expect my compensation to be in line with Citi’s standard salary structure for a Vice President role, factoring in the responsibilities and my experience.
+ 
 
 Consider below points for my question
 
