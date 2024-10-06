@@ -1,3 +1,7 @@
+“While I do not hold any formal certifications, I bring extensive hands-on experience in software engineering and low latency trading systems. My expertise in this domain, combined with a strong understanding of industry best practices, has enabled me to deliver high-performance solutions in real-world environments.”
+
+
+
 Consider below points for my question
 
 1) I have two kafka providers(Say Fusion or KaaS) and from old provider(Fusion) to new provider(KaaS) we are migrating
