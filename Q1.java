@@ -74,11 +74,11 @@ public class Solution {
         System.out.println(sol.solution(test1)); // Output: 2
         
         // Test case 2
-        String test2 = "xyxZYZabcABC";
+        String test2 = "xyzXYZabcABC";
         System.out.println(sol.solution(test2)); // Output: 6
         
         // Test case 3
-        String test3 = "ABCabcAFegF";
+        String test3 = "ABCabcAefG";
         System.out.println(sol.solution(test3)); // Output: 0
     }
 }  
