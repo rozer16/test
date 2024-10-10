@@ -30,33 +30,40 @@ Let me know if you need further clarifications!
 
 
 public class Solution {
-    public int solution(String letters) {
-        // Boolean arrays to track seen lowercase and valid letters
-        boolean[] lowercaseSeen = new boolean[26];  // for 'a' to 'z'
-        boolean[] validLetters = new boolean[26];   // for 'a' to 'z'
-        
+   public int solution(String letters) {
+        // Boolean array to track lowercase letters that have been seen
+        boolean[] lowercaseSeen = new boolean[26];
+        // Boolean array to track whether the letter is valid (lowercase before uppercase)
+        boolean[] validLetters = new boolean[26];
+        // Boolean array to track if the uppercase appeared before lowercase (invalid case)
+        boolean[] invalidLetters = new boolean[26];
+
         // Traverse through each character in the input string
         for (char c : letters.toCharArray()) {
             if (Character.isLowerCase(c)) {
-                // Mark the lowercase letter as seen
+                // If it's a lowercase letter, mark it as seen
                 lowercaseSeen[c - 'a'] = true;
             } else {
-                // Check if the lowercase of this uppercase letter has been seen
-                if (lowercaseSeen[Character.toLowerCase(c) - 'a']) {
-                    // Mark this letter as valid
-                    validLetters[Character.toLowerCase(c) - 'a'] = true;
+                // If it's an uppercase letter
+                int index = Character.toLowerCase(c) - 'a';
+                if (lowercaseSeen[index]) {
+                    // If lowercase was seen first, mark it as valid
+                    validLetters[index] = true;
+                } else {
+                    // If no lowercase was seen before, mark this letter as invalid
+                    invalidLetters[index] = true;
                 }
             }
         }
-        
-        // Count the number of valid letters
+
+        // Count valid letters that were not invalid
         int count = 0;
-        for (boolean isValid : validLetters) {
-            if (isValid) {
+        for (int i = 0; i < 26; i++) {
+            if (validLetters[i] && !invalidLetters[i]) {
                 count++;
             }
         }
-        
+
         return count;
     }
 
