@@ -16,8 +16,8 @@ that, given a string letters, returns the number of different letters fulfilling
 Examples:
 
 	1.	Given letters = "aaAbcCABBc", the function should return 2, as explained above.
-	2.	Given letters = "xyxZYZabcABC", the function should return 6.
-	3.	Given letters = "ABCabcAFegF", the function should return 0.
+	2.	Given letters = "xyzXYZabcABC", the function should return 6.
+	3.	Given letters = "ABCabcAefG", the function should return 0.
 
 Write an efficient algorithm for the following assumptions:
 
