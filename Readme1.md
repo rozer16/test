@@ -1,73 +1,73 @@
 
-Based on the detailed information you’ve provided, here are tailored “what” and “how” inputs you can consider for your year-end evaluation:
+Here’s the converted text from the image you shared:
 
-1. Leadership Principle: We Take Ownership
+RBCM Xing Credit (Consent order) : Xing Rates and Xing credit development with more than 80% code coverage for new code development making Xing credit  live and handling its issue
 
-What:
+Regulatory Reporting work:
 
-•	Took the initiative to challenge the status quo by refining processes for regulatory reporting (e.g., EMIR Refit, EMIR Valuation Reporting) and handling production issues with quick turnaround solutions, such as 
+	•	EMIR Refit key contributor in analysis and development
+	•	Adding new attributes in Citigate (static) for Trade Reporting to RIO for EMIR Refit (Parent JIRA: C167042-7415)
+	•	Adding new attributes in Citigate (static) for Valuation Reporting to RIO for EMIR Refit (C167042-8325)
+	•	Populating ISIN at the trade level – source flow (C167042-8836)
+	•	Testing connectivity with TLS authentication (C167042-8611)
+	•	Generic ISG cloud services flow for validation (C167042-8863)
+	•	Worked with BA/PO/ISG Cloud team (C167042-8802) for requirement and analysis
+	•	Components implementation to generate request for each asset class (C167042-9372/C167042-9374/C167042-9373)
+	•	After development, generating stats for checking accuracy and sharing with BA/PO (C167042-9884)
+	•	Preparing jobs for backloading which will be used in future. These jobs were used during EMIR Refit ESMA/FCA/ backloading for fetching ISIN for given set of deals.
+	     • Added Junit test cases covering more than 80%	
+	•	Report Floating reset date in B3 daily LCH (C167042C-2444)
+
+Delivered Production Issues with quick turnaround as hot fix:
+
 	•	JSCC FTP Production connection for non-TLS connection (C167042-10261)
 	•	Correct (db patch) Reporting obligation of 85 Citigate trades (C167042C-3358)
 	•	Eurex/LCH UTI issue since OasysDB writing old UTI – FCA EMIR inquiry (C167042C-4257)
 	•	[EMIR ESMA PROD Request] Update UTI for EUREX trades (C167042C-5307)
 	•	[ESMA PROD Request] Correct (db patch) Reporting obligation of 4 Citigate trades (C167042C-5710)
 
-•	Led and coordinated the production release processes, ensuring smooth transitions by mentoring new team members on release paperwork and procedures.
+======================
+Agile: 
+Participated activity in all agile ceremonies and provided input whenever required based on individual blockers/assistance
+Actively participated in agile ceremonies likes refinement, review to stockholder, raised improvement points in retrospectives
+======================
+Production release
 
-How:
+Managed release process end to end
+Helped new team members to get familiar with release paper work and process
+Irrespective on the day of release I am release coordinator or not/issue owned by me/others, Helped team to resolve issue to not impact client deliverables
 
-•Encouraged a culture of accountability by taking proactive steps in problem identification and remediation, Raising risk at right time and addressing them on timely manner such as addressing ISIN population issues.
-•Actively engaged in agile ceremonies and retrospectives, fostering an environment of open communication and collective responsibility, raising blockers, and ensuring,alignment with goals.
-•In case of any issue, irrespective of who is owner, provided support during development/production issues/releases
+======================
+NEO:
 
-2. Leadership Principle: We Deliver with Pride
+	•	Analyze the catalyst component: transformer & JDBC sink (C167042C-1034/C167042C-1032)
+	•	Design a Fenix feed processor to get XML/JSON object and transform into DCS 2.0 JSON object
+======================
+As part of tech uplift Kafka Migration:
 
-What:
+	•	Driving migration from Fusion to KAAS
+	•	Contributed in preparing excel for which Kafka topic interacts with which service, mentored team members as below:
+	•	how to create Kafka topics
+	•	how to configure 2-way authentication
+	•	what to change in existing services, creating common configuration and reuse it.
+	•	design common changes in a way to require minimal changes
+	•	how to test specific services.
 
-	•	Driving Kafka migration, mentoring team members on best practices for topic creation, two-way authentication, and service testing.
-	•	Ensured code quality by adhering to SDLC standards, maintaining high test coverage across regulatory components for new developed component, and proactively identifying functional and technical gaps in applications.
-	•	Delivered high-quality production support by addressing issues like JSCC FTP connection and FCA EMIR inquiries.
+======================
 
-How:
+Helped one new team:Hermes hired in Dublin and started helping other team : Prometheous
 
-	•	Focused on operational excellence by optimizing workflows for both development and testing, continuously improving quality and reducing risks associated with technical debt.
-	•	Demonstrated a commitment to long-term value by actively resolving root causes in application hygiene and regulatory reporting, with consistent follow-up on identified vulnerabilities and gaps.
+Helped them to on board and getting all required resources
+Walked over them different Citigate application flow, provided multiple sessions on many components, infrastructure details
+Wanted over them different DCS application, how Citigate & DCS applications are connected, high level batch flow, Reference data flow(What is ESales,AMC, PMC, SMC etc )
+Walked over Release process and few team members who were shadowing for release process, helped them to thoroughly understand end to end process.
 
-3. Leadership Principle: We Succeed Together
+======================
 
-What:
 
-	•	Provided cross-team support, particularly to the Hermes (and now Prometheus teams) through onboarding assistance, knowledge sharing, and detailed walkthroughs of Citigate and DCS application flows.
-	•	Led sessions to explain complex infrastructure details and reference data flow, enhancing collaboration and collective ownership of the application architecture.
- 	• Helped Keerthana and Akash to understand respective flow and complete phase 1 & phase 2 kafka migration.
+Apart from regular work
 
-How:
-
-	•	Cultivated a team ethos of shared success by mentoring new team members and guiding them through the Kafka migration and production release processes.
-	•	Demonstrated servant leadership by enabling teams to be self-organizing and autonomous, providing them with the tools and knowledge needed to succeed, while still being available for guidance when required.
-
-4. Risk and Control:
-
-What:
-
-	•	Ensured regulatory compliance and control by working closely with BAs, POs, to enhance application hygiene, particularly in EMIR Refit projects.
-	•	Resolved production issues promptly, minimizing impact on business deliverables and ensuring client expectations were met.
-
-How:
-
-	•	Proactively managed risk by integrating security controls into the codebase, ensuring adherence to Citi’s control framework, and enforcing 80%+ test coverage to avoid post-deployment risks.
-	•	Facilitated seamless handovers to support teams through thorough documentation and knowledge transfer sessions, reducing potential risks in production environments.
-
-5. Client & Franchise Outcomes:
-
-What:
-
-	•	Led significant components of NEO, including designing Fenix feed processors and contributing to catalyst component analysis.
-	•	Actively participated in and contributed to improving the overall delivery of the OTC area through collaboration with multiple teams, enhancing communication and productivity.
-
-How:
-
-	•	Embraced the Agile journey by focusing on continuous improvement, suggesting enhancements during retrospectives, and addressing functional gaps that improved the performance and usability of the applications.
-	•	Engaged with stakeholders and ensured that the solutions provided met business needs, with minimal friction during implementation, leading to improved client and operational outcomes.
-
-This framework integrates your key accomplishments with the leadership principles, clearly highlighting both “what” you achieved and “how” you approached your work.
+Part of sync pilot user
+Part of India Market Technology team
+Nominated for E3 engineering excellence program
+Nominated for Citi India Hackathon: Supported by FINOS 
