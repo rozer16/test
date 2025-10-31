@@ -160,3 +160,94 @@ class Solution {
         System.out.println("Perf Test 3 (alternating prefs): " + s.solution(A, B, S)); // true
     }
 }
+
+//V4
+
+
+import java.util.*;
+
+class Solution {
+    public boolean solution(int[] A, int[] B, int S) {
+        int N = A.length;
+        if (N > S) return false;           // more patients than slots
+        if (N == 0) return true;           // no patients
+        if (S == 0) return false;          // no slots but patients exist
+
+        int[] slotAssigned = new int[S + 1];   // slot -> patient
+        int[] visited = new int[S + 1];        // visit markers
+        int visitId = 0;
+
+        for (int patient = 1; patient <= N; patient++) {
+            visitId++;
+            if (!canAssignIterative(patient, A, B, slotAssigned, visited, visitId)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean canAssignIterative(int startPatient, int[] A, int[] B,
+                                       int[] slotAssigned, int[] visited, int visitId) {
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(startPatient);
+
+        while (!stack.isEmpty()) {
+            int patient = stack.pop();
+            int a = A[patient - 1];
+            int b = B[patient - 1];
+
+            for (int slot : new int[]{a, b}) {
+                if (visited[slot] == visitId) continue;
+                visited[slot] = visitId;
+
+                int assigned = slotAssigned[slot];
+                if (assigned == 0) {
+                    slotAssigned[slot] = patient; // free slot found
+                    return true;
+                } else {
+                    // take the slot and reassign the displaced patient
+                    slotAssigned[slot] = patient;
+                    stack.push(assigned);
+                }
+            }
+        }
+        return false;
+    }
+
+    // ------------------- TEST DRIVER -------------------
+    public static void main(String[] args) {
+        Solution s = new Solution();
+
+        // Basic
+        System.out.println("Test 1: " + s.solution(new int[]{1,3}, new int[]{2,1}, 3)); // true
+        System.out.println("Test 2: " + s.solution(new int[]{1,1}, new int[]{2,2}, 2)); // true
+        System.out.println("Test 3: " + s.solution(new int[]{1,1}, new int[]{1,1}, 1)); // false
+
+        // Edge
+        System.out.println("Test 4: " + s.solution(new int[]{1}, new int[]{1}, 1)); // true
+        System.out.println("Test 5: " + s.solution(new int[]{1,2,3}, new int[]{1,2,3}, 3)); // true
+        System.out.println("Test 6: " + s.solution(new int[]{1,2,3,4}, new int[]{1,2,3,4}, 3)); // false
+        System.out.println("Test 7: " + s.solution(new int[]{1,2,3,4}, new int[]{1,1,1,1}, 4)); // true
+        System.out.println("Test 8: " + s.solution(new int[]{1,2,3,4}, new int[]{1,1,1,1}, 3)); // false
+        System.out.println("Test 9: " + s.solution(new int[]{1,2,2,3}, new int[]{2,3,3,4}, 4)); // true
+
+        // Performance
+        int N = 100000, S = 100000;
+        int[] A = new int[N], B = new int[N];
+        for (int i = 0; i < N; i++) { A[i] = i + 1; B[i] = i + 1; }
+        System.out.println("Perf Test 1: " + s.solution(A, B, S)); // true
+
+        N = 100000; S = 99999;
+        A = new int[N]; B = new int[N];
+        for (int i = 0; i < N; i++) { A[i] = 1; B[i] = 1; }
+        System.out.println("Perf Test 2: " + s.solution(A, B, S)); // false
+
+        N = 100000; S = 100000;
+        A = new int[N]; B = new int[N];
+        for (int i = 0; i < N; i++) {
+            A[i] = (i % 2) + 1;
+            B[i] = ((i + 1) % 2) + 1;
+        }
+        System.out.println("Perf Test 3: " + s.solution(A, B, S)); // true
+    }
+}
