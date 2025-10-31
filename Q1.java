@@ -39,3 +39,43 @@ class Solution {
         return false;
     }
 }
+
+// V2
+
+
+import java.util.*;
+
+class Solution {
+    public boolean solution(int[] A, int[] B, int S) {
+        int N = A.length;
+        if (N > S) return false; // more patients than slots => impossible
+        
+        int[] slotAssigned = new int[S + 1];
+        int[] visited = new int[S + 1];
+        int visitId = 0;
+
+        for (int patient = 1; patient <= N; patient++) {
+            visitId++;
+            if (!canAssign(patient, A, B, slotAssigned, visited, visitId)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean canAssign(int patient, int[] A, int[] B, int[] slotAssigned, int[] visited, int visitId) {
+        // Check both preferred slots
+        int[] prefs = {A[patient - 1], B[patient - 1]};
+        for (int slot : prefs) {
+            if (visited[slot] == visitId) continue;
+            visited[slot] = visitId;
+
+            // If slot free OR current occupant can move
+            if (slotAssigned[slot] == 0 || canAssign(slotAssigned[slot], A, B, slotAssigned, visited, visitId)) {
+                slotAssigned[slot] = patient;
+                return true;
+            }
+        }
+        return false;
+    }
+}
