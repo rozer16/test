@@ -2,36 +2,29 @@
 import java.util.*;
 
 class Solution {
+   class Solution {
     public int solution(String letters) {
-        // Track lowercase and uppercase occurrences
-        boolean[] seenLower = new boolean[26];
-        boolean[] seenUpper = new boolean[26];
-        boolean[] invalid = new boolean[26]; // mark letters that violate rule
+       int lowerMask = 0;   // bit i = lowercase 'a'+i seen
+        int upperMask = 0;   // bit i = uppercase 'A'+i seen
+        int invalidMask = 0; // bit i = invalid letter
 
-        for (char c : letters.toCharArray()) {
-            if (Character.isLowerCase(c)) {
-                int idx = c - 'a';
-                if (seenUpper[idx]) {
-                    // Lowercase appears after uppercase — invalid
-                    invalid[idx] = true;
-                }
-                seenLower[idx] = true;
-            } else if (Character.isUpperCase(c)) {
-                int idx = c - 'A';
-                seenUpper[idx] = true;
-                // Any lowercase that appears later is invalid — handled above
+        for (int i = 0; i < letters.length(); i++) {
+            char c = letters.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                int bit = 1 << (c - 'a');
+                if ((upperMask & bit) != 0) invalidMask |= bit;
+                lowerMask |= bit;
+            } else {
+                int bit = 1 << (c - 'A');
+                upperMask |= bit;
             }
         }
 
-        int count = 0;
-        for (int i = 0; i < 26; i++) {
-            if (seenLower[i] && seenUpper[i] && !invalid[i]) {
-                count++;
-            }
-        }
-        return count;
+        // Letters that appear both lower+upper and not invalid
+        int bothMask = lowerMask & upperMask & ~invalidMask;
+        return Integer.bitCount(bothMask);
     }
-
+}
     // Small test driver
     public static void main(String[] args) {
         Solution sol = new Solution();
