@@ -79,3 +79,21 @@ class Solution {
         return false;
     }
 }
+
+//V3
+
+private boolean canAssign(int patient, int[] A, int[] B, int[] slotAssigned, int[] visited, int visitId) {
+    int a = A[patient - 1], b = B[patient - 1];
+    if (trySlot(a, patient, A, B, slotAssigned, visited, visitId)) return true;
+    return trySlot(b, patient, A, B, slotAssigned, visited, visitId);
+}
+
+private boolean trySlot(int slot, int patient, int[] A, int[] B, int[] slotAssigned, int[] visited, int visitId) {
+    if (visited[slot] == visitId) return false;
+    visited[slot] = visitId;
+    if (slotAssigned[slot] == 0 || canAssign(slotAssigned[slot], A, B, slotAssigned, visited, visitId)) {
+        slotAssigned[slot] = patient;
+        return true;
+    }
+    return false;
+}
