@@ -1,5 +1,1 @@
-Sayali has demonstrated adaptability, dedication, and ownership during the initial stages of the project, particularly with her transition into a core UI role. Her contributions to the PSE for CMP and  initial phase of Max Tenor Exception projects were impressive. Despite being new to the frontend and navigating multiple back-and-forth changes, she quickly ramped up and delivered all assigned UI components 
 
-Her ability to understand dynamic requirements and support the team during critical timelines was highly appreciated. She has also shown collaboration early in the project, often assisting others and contributing to a positive and supportive team environment.
-
-During recent UI issues and collaborative debugging with team members who work closely with her, there has been a slight dip observed in her involvement. As a senior developer, her active participation and suggestions during such situations would be very valuable. Increasing engagement in discussions and sharing blockers early would help bring back the strong momentum she showed earlier.
