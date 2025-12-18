@@ -1,34 +1,25 @@
-public static User getUser(HttpServletRequest req) {
-    HttpSession session = req.getSession(false);
-    if (session == null) {
-        return null;                      // ❌ don't return the session, return null
-    }
-    // Get the user object from the "user" attribute in the session
-    return (User) session.getAttribute("user");
-}
+@echo off
+title Keep Alive (Teams) Until 8 PM IST
 
-public static void login(HttpServletRequest req, HttpServletResponse resp, User user) {
-    // Invalidate any existing session
-    HttpSession oldSession = req.getSession(false);
-    if (oldSession != null) {
-        oldSession.invalidate();
-    }
+set LOGFILE=%~dp0keep_awake.log
+echo ================================ >> "%LOGFILE%"
+echo Script started at %date% %time% >> "%LOGFILE%"
 
-    // Create a new session and store the user
-    HttpSession session = req.getSession(true);   // note: true to create a new one
-    session.setAttribute("user", user);           // store under "user"
-}
+:loop
+:: Get current hour
+for /f "tokens=1 delims=:" %%H in ("%time%") do set hour=%%H
+set hour=%hour: =0%
 
-public static void login(HttpServletRequest req, HttpServletResponse resp, User user) {
-    // Invalidate any existing session
-    HttpSession oldSession = req.getSession(false);
-    if (oldSession != null) {
-        oldSession.invalidate();
-    }
+:: Auto-stop at or after 8 PM
+if %hour% GEQ 20 (
+    echo [%date% %time%] 8 PM reached. Stopping script. >> "%LOGFILE%"
+    exit /b
+)
 
-    // Create a new session and store the user
-    HttpSession session = req.getSession(true);   // note: true to create a new one
-    session.setAttribute("user", user);           // store under "user"
-}
+:: Send harmless key (F15 does nothing but counts as activity)
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('{F15}')"
 
-import jakarta.servlet.http.HttpSession;   // or javax.servlet.http.HttpSession
+echo [%date% %time%] Activity signal sent (Teams alive). >> "%LOGFILE%"
+
+timeout /t 240 >nul
+goto loop
