@@ -1,1 +1,1 @@
-Vice President – Markets Sales Technology, leading the Credit Workflow platform for intraday limit and tenor breach monitoring and approval orchestration across 1LOD/2LOD/3LOD. Previously part of OTC Derivatives Clearing modernization initiatives.
+Led the Credit Workflow platform in Markets Sales Tech to enable real-time monitoring of limit and tenor breaches with automated 1LOD/2LOD/3LOD approvals, strengthening intraday risk controls. Previously modernized the OTC clearing platform from monolith to microservices, reducing deployment time by 30%.
